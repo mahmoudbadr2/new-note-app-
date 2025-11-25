@@ -40,9 +40,9 @@ class _AddNoteFormState extends State<AddNoteForm> {
             hint: 'Content',
             maxLine: 5,
           ),
-          const SizedBox(height: 32),
+          const SizedBox(height: 16),
           const ColorsListView(),
-          const SizedBox(height: 15),
+          const SizedBox(height: 16),
           CustomBottom(
             onTap: () {
               if (formKey.currentState!.validate()) {
