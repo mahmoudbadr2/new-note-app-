@@ -27,6 +27,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
         children: [
           const SizedBox(height: 32),
           CustomTextField(
+            autoFocus: false,
             onSaved: (value) {
               title = value;
             },
@@ -34,6 +35,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
           ),
           const SizedBox(height: 16),
           CustomTextField(
+            autoFocus: false,
             onSaved: (value) {
               subTitle = value;
             },

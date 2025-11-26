@@ -8,16 +8,24 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: true,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(
+            isScrollControlled: true,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadiusGeometry.circular(16),
+              borderRadius: BorderRadius.circular(16),
             ),
             context: context,
             builder: (context) {
-              return const AddNoteBottomSheet();
+              return Padding(
+                padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(
+                    context,
+                  ).viewInsets.bottom, // adjust for keyboard
+                ),
+                child: const AddNoteBottomSheet(),
+              );
             },
           );
         },
